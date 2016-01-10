@@ -53,12 +53,10 @@
     -->
     </nav>
 
-
-
     <div class="row" data-spy="affix" data-offset-top="72" style="z-index:999;">
       <div class="col-sm-12">
         <ol class="breadcrumb">
-          <button type="button" class="btn btn-default" onclick="$('#toc').toggle();" data-toggle="offcanvas" {% if second %} {% else %} disabled{% endif %}>
+          <button type="button" class="btn btn-default" onclick="$('.row-offcanvas').toggleClass('active');" data-toggle="offcanvas" {% if second %} {% else %} disabled{% endif %}>
             <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
           </button>
           <li>
@@ -69,21 +67,27 @@
           {% if second %}
           <li class="active">{{second}}</li>
           {% endif %}
-
         </ol>
       </div>
-
     </div>
-
-    <div class="pull-right" id="toc" style="z-index:999;right:0%;" ></div>
 
 
 
   <div class="container-fluid" id="top">
+    <div class="row-fluid {% if second %} row-offcanvas row-offcanvas-left {% endif %}"  >
+      {% if second %}
+      <div class="col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation"> 
+        <ul class="nav nav-stacked" id="sidebar">
+          <div id="toc" ></div>
+        </ul>
+      </div>
 
-    <div class="row-fluid" >
+      <div class="col-sm-9" data-spy="scroll">
 
-      <div class="col-sm-12" data-spy="scroll" style="margin-left:0%">
+        {% else %}
+      <div class="col-sm-12" data-spy="scroll" style="margin-left:5%">
+
+      {% endif %}
 
       {% block body %}{% endblock %}
       {% block markdown %}{% endblock %}
