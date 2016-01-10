@@ -74,15 +74,16 @@
 
 
   <div class="container-fluid" id="top">
-    <div class="row-fluid row-offcanvas row-offcanvas-left"  >
+    <div class="row-fluid {% if second %} row-offcanvas row-offcanvas-left {% endif %}"  >
       {% if second %}
-      <div class="col-sm-3" id="sidebar" role="navigation"> 
+      <div class="col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation"> 
         <ul class="nav nav-stacked" id="sidebar">
           <div id="toc" ></div>
         </ul>
       </div>
 
       <div class="col-sm-9" data-spy="scroll">
+
         {% else %}
       <div class="col-sm-12" data-spy="scroll" style="margin-left:5%">
 
