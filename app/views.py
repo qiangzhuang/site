@@ -4,6 +4,13 @@ from flask_misaka import markdown
 from app import app, APP_ROOT, APP_STATIC, APP_POSTS
 import os, datetime
 
+#@app.before_request
+#def before_request():
+ #   if request.url.startswith('http://'):
+  #      url = request.url.replace('http://', 'https://', 1)
+   #     code = 301
+    #    return redirect("/", code=code)
+
 def gimme_data(f):
     with open(f) as fd:
         return fd.read()
