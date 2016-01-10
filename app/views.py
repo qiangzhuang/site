@@ -16,6 +16,7 @@ def gimme_data(f):
 @app.route('/')
 def show_recent_post():
     # get most recent markdown post in the folder of posts
+    
     return render_template("markdown.html", post=gimme_data(get_most_recent_file()))
 
 
