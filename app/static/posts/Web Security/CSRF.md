@@ -3,7 +3,7 @@
 ## What is CSRF?
 CSRF (pronounced sea-surf) stands for Cross Site Request Forgery. It's also known as the one-click attack or session riding.  It is a vulnerability in which unauthorized actions are transmitted from a user's browser (the victim) to a website that they are currently authenticated with. This issue exploits the trust that a website has with the user's web browser.
 
-In order to be a security risk, this vulnerability must be targeted towards already authenticated users AND state-changing actions. Lack of CSRF protection on unauthenticated pages is just a lack of authentication issue. Lack of CSRF protection on pages which only read/display data is not a problem because the attacker will not be able to view the results of forged request as it is coming from the victims browser. A few examples of state-changing actions include: submission of a form, a write, or a modification/update.
+In order to be a security risk, this vulnerability must be targeted towards already authenticated users AND be state-changing actions. Lack of CSRF protection on unauthenticated pages is just a lack of authentication issue. Lack of CSRF protection on pages which only read/display data is not a problem because the attacker will not be able to view the results of forged request as it is coming from the victims browser. A few examples of state-changing actions include: submission of a form, a write, or a modification/update.
 
 
 ##Is CSRF an issue on unauthenticated pages?
